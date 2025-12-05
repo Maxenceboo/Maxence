@@ -31,5 +31,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          # Comme tu as nommé ton projet "mon-super-projet", le dossier est ici :
-          folder: dist/Maxence/browser
+          folder: dist/maxence/browser
