@@ -5,7 +5,7 @@
         </div>
 
         <!-- Desktop Slider -->
-        <div class="flex flex-col lg:flex-row h-[800px] lg:h-[600px] w-full max-w-[1920px] mx-auto bg-black border-y border-white/10" id="project-slider">
+        <div class="flex flex-col lg:flex-row h-[800px] lg:h-[600px] w-full max-w-[1920px] mx-auto bg-[#0f172a] border-y border-white/10" id="project-slider">
             
             <div *ngFor="let project of projects; let i = index" 
                  class="project-card group relative overflow-hidden cursor-pointer border-b lg:border-b-0 lg:border-r border-white/10"
@@ -21,7 +21,7 @@
                          [class.opacity-30]="selectedIndex !== i"
                          [class.group-hover:scale-105]="selectedIndex === i"
                          [alt]="project.title">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent"></div>
                 </div>
                 
                 <!-- Expanded Content -->
@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- Collapsed Content (Hidden when expanded) -->
-                <div class="content-collapsed absolute inset-0 flex items-center justify-center bg-black/80 transition-opacity duration-300 z-30"
+                <div class="content-collapsed absolute inset-0 flex items-center justify-center bg-slate-950/70 transition-opacity duration-300 z-30"
                      [class.opacity-0]="selectedIndex === i"
                      [class.pointer-events-none]="selectedIndex === i"
                      [class.opacity-100]="selectedIndex !== i">
