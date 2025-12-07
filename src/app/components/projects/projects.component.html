@@ -1,16 +1,17 @@
-    <section id="projects" class="py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+    <section id="projects" class="py-24 relative overflow-hidden scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center animate-fade-in-up">
             <span class="text-sm uppercase tracking-widest text-gray-500 mb-3 block">Project</span>
             <h2 class="text-4xl md:text-5xl font-bold">All my projects are here, slide to <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">discover !</span></h2>
         </div>
 
         <!-- Desktop Slider -->
-        <div class="flex flex-col lg:flex-row h-[800px] lg:h-[600px] w-full max-w-[1920px] mx-auto bg-[#0f172a] border-y border-white/10" id="project-slider">
+        <div class="flex flex-col lg:flex-row h-[800px] lg:h-[600px] w-full max-w-[1920px] mx-auto bg-[#0f172a] border-y border-white/10 animate-fade-in-up animate-delay-2" id="project-slider">
             
             <div *ngFor="let project of projects; let i = index" 
-                 class="project-card group relative overflow-hidden cursor-pointer border-b lg:border-b-0 lg:border-r border-white/10"
+                 class="project-card group relative overflow-hidden cursor-pointer border-b lg:border-b-0 lg:border-r border-white/10 animate-fade-in-up"
                  [class.flex-grow-[3]]="selectedIndex === i"
                  [class.flex-grow-[1]]="selectedIndex !== i"
+                 [ngClass]="'animate-delay-' + (i % 4)"
                  (click)="setActive(i)">
                  
                 <div class="absolute inset-0">
@@ -32,7 +33,7 @@
                     <span class="text-orange-500 font-medium mb-2">{{ project.category }}</span>
                     <h3 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">{{ project.title }}</h3>
                     <p class="text-gray-300 mb-8 leading-relaxed">{{ project.description }}</p>
-                    <button class="px-8 py-3 bg-white text-black font-bold text-sm rounded hover:bg-gray-200 transition-colors w-max">
+                    <button class="px-8 py-3 bg-white text-black font-bold text-sm rounded hover:bg-gray-200 transition-colors w-max button-glow">
                         VOIR LE PROJET
                     </button>
                 </div>
