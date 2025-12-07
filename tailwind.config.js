@@ -4,7 +4,22 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Space Grotesk"', 'sans-serif'],
+      },
+      colors: {
+        brand: {
+          dark: '#050507',
+          orange: '#ea580c',
+          red: '#dc2626',
+          gray: '#1f1f22'
+        }
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      }
+    },
   },
   plugins: [],
 }

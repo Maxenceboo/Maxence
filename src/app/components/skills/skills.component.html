@@ -1,0 +1,21 @@
+    <section id="skills" class="py-24 relative">
+        <!-- Center Glow -->
+        <div class="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <span class="text-sm text-gray-400 mb-4 block">Skills</span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">
+                The skills I use in my work.<br>
+                <span class="text-gray-400">Lorem ipsumdolor site amet.</span>
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div *ngFor="let skill of skills" class="flex flex-col items-center gap-3 group">
+                    <div [className]="'w-20 h-24 bg-white rounded-lg flex items-center justify-center text-4xl text-black group-hover:text-white transition-colors duration-300 shadow-[0_0_30px_rgba(0,0,0,0.5)] ' + skill.hoverColor">
+                        <i [class]="skill.icon"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider">{{ skill.name }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
