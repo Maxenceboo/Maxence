@@ -1,0 +1,46 @@
+    <header id="about" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Ambient Glow -->
+        <div class="absolute top-0 left-0 w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none glow-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none glow-pulse animate-delay-2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            
+            <!-- Text Content -->
+            <div class="space-y-8 animate-fade-in-up">
+                <span class="text-gray-400 text-lg tracking-wide">Hi ! I'm Maxence !</span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1]">
+                    Full Stack <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 animate-gradient">Developer</span><br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 animate-gradient">Angular & Java/Spring</span>
+                </h1>
+                <p class="text-gray-400 max-w-lg leading-relaxed">
+                    Développeur full stack JS/TS: Angular pour des interfaces nettes et performantes, Java/Spring Boot pour des APIs fiables. J'aime livrer vite sans sacrifier la qualité ni l'expérience utilisateur.
+                </p>
+                
+                <div class="flex gap-4 pt-4">
+                    <a href="https://github.com/Maxenceboo" class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center hover:scale-110 transition-transform animate-float animate-delay-1" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-github text-white"></i>
+                    </a>
+                    <a href="https://discord.gg/BeymY67j" class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center hover:scale-110 transition-transform animate-float animate-delay-2" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-discord text-white"></i>
+                    </a>
+                    <a href="mailto:maxence@bourrague.pro" class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center hover:scale-110 transition-transform animate-float animate-delay-3">
+                        <i class="fa-solid fa-envelope text-white"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative group animate-fade-in-up animate-delay-2">
+                <div class="absolute inset-0 bg-gradient-to-tr from-orange-600 to-red-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
+                    <!-- Image with red duotone effect overlay simulation -->
+                    <div class="absolute inset-0 bg-red-900/40 mix-blend-overlay z-10"></div>
+                    <img src="assets/images/me.jpg" alt="Maxence" class="w-full h-full object-cover grayscale contrast-125 brightness-90">
+                    
+                    <!-- Gradient overlay for text legibility if needed later -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent z-20"></div>
+                </div>
+            </div>
+        </div>
+    </header>
