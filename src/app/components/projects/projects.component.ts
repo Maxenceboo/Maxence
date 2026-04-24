@@ -3,14 +3,12 @@ import { Component } from '@angular/core';
 
 interface Project {
     category: string;
-    title: string;
+    name: string;
+    subtitle: string;
     description: string;
     stack: string;
     link: string;
-    accent: string;
-    surface: string;
-    badge: string;
-    collapsedTitle: string;
+    themeClass: string;
 }
 
 @Component({
@@ -23,42 +21,48 @@ export class ProjectsComponent {
     projects: Project[] = [
         {
             category: 'Framework',
-            title: 'ClearBoot, framework web TypeScript orienté DI.',
-            description: 'Framework Node.js léger inspiré de NestJS, avec injection de dépendances, décorateurs et architecture atomique. Le repo est structuré comme un vrai produit open source avec documentation, licence MIT et tests.',
+            name: 'ClearBoot',
+            subtitle: 'Framework web TypeScript orienté DI.',
+            description: 'Framework Node.js léger inspiré de NestJS, avec DI, décorateurs et une structure pensée pour rester propre.',
             stack: 'TypeScript, Node.js, DI',
             link: 'https://github.com/Maxenceboo/ClearBoot',
-            accent: 'from-orange-400/30 via-orange-500/10 to-transparent',
-            surface: 'from-[#17131a] via-[#10131d] to-[#0b1020]',
-            badge: 'text-orange-200 border-orange-400/20 bg-orange-400/10',
-            collapsedTitle: 'ClearBoot'
+            themeClass: 'project-showcase-card--orange',
         },
         {
             category: 'CLI Tool',
-            title: 'schema2md, génération de documentation de base de données.',
-            description: 'CLI TypeScript qui transforme un schéma SQLite, PostgreSQL ou MySQL en documentation Markdown ou LaTeX, avec diagramme ER Mermaid et génération PDF. Projet pensé pour être utilisable hors contexte scolaire.',
+            name: 'schema2md',
+            subtitle: 'Génération de documentation de base de données.',
+            description: 'CLI TypeScript qui transforme un schéma SQL en documentation Markdown ou LaTeX avec diagramme ER.',
             stack: 'TypeScript, Node.js, CLI',
             link: 'https://github.com/Maxenceboo/schema2md',
-            accent: 'from-sky-400/30 via-blue-500/10 to-transparent',
-            surface: 'from-[#111827] via-[#0c1424] to-[#0a1020]',
-            badge: 'text-sky-200 border-sky-400/20 bg-sky-400/10',
-            collapsedTitle: 'schema2md'
+            themeClass: 'project-showcase-card--blue',
         },
         {
             category: 'Microservices',
-            title: 'TP07, architecture microservices complète.',
-            description: 'Monorepo DevOps avec frontend Next.js, auth service FastAPI, services NestJS, Docker Compose et manifests Kubernetes. Le projet met surtout en avant l’orchestration, la communication entre services et le déploiement.',
+            name: 'TP07',
+            subtitle: 'Architecture microservices complète.',
+            description: 'Monorepo DevOps avec frontend, services, conteneurisation et déploiement Kubernetes.',
             stack: 'Next.js, FastAPI, NestJS, Kubernetes',
             link: 'https://github.com/Maxenceboo/tp07-microservices-project',
-            accent: 'from-emerald-400/25 via-cyan-400/10 to-transparent',
-            surface: 'from-[#0d1715] via-[#0b1320] to-[#0a1020]',
-            badge: 'text-emerald-200 border-emerald-400/20 bg-emerald-400/10',
-            collapsedTitle: 'TP07'
+            themeClass: 'project-showcase-card--green',
+        },
+        {
+            category: 'SaaS Product',
+            name: 'Boorise',
+            subtitle: 'ERP SaaS modulaire pour PME et TPE.',
+            description: 'Projet produit autour d’un ERP pensé pour la facturation, le CRM et la gestion des stocks.',
+            stack: 'Angular, API, PostgreSQL, SaaS',
+            link: 'https://github.com/Maxenceboo/Boorise',
+            themeClass: 'project-showcase-card--pink',
+        },
+        {
+            category: 'Portfolio',
+            name: 'Maxence',
+            subtitle: 'Portfolio frontend Angular.',
+            description: 'Portfolio Angular/Tailwind conçu pour présenter les projets publics avec une direction visuelle claire.',
+            stack: 'Angular, Tailwind, TypeScript',
+            link: 'https://github.com/Maxenceboo/Maxence',
+            themeClass: 'project-showcase-card--amber',
         }
     ];
-
-    selectedIndex = 0;
-
-    setActive(index: number) {
-        this.selectedIndex = index;
-    }
 }

@@ -1,65 +1,50 @@
-    <section id="projects" class="py-24 relative overflow-hidden scroll-reveal">
-        <div class="max-w-7xl mx-auto px-6 mb-16 text-center animate-fade-in-up">
-            <span class="text-sm uppercase tracking-widest text-gray-500 mb-3 block">Project</span>
-            <h2 class="text-4xl md:text-5xl font-bold">All my projects are here, slide to <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">discover !</span></h2>
+<section id="projects" class="py-24 relative overflow-hidden scroll-reveal">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-14 md:mb-16 max-w-3xl animate-fade-in-up">
+            <span class="section-kicker">Projets</span>
+            <h2 class="section-title">
+                Une sélection de projets
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">que j’ai construits</span>
+            </h2>
+            <p class="section-copy mt-4">
+                Cinq projets qui résument mon approche: structure, lisibilité technique et attention portée au produit.
+            </p>
         </div>
 
-        <!-- Desktop Slider -->
-        <div class="flex flex-col lg:flex-row h-[800px] lg:h-[600px] w-full max-w-[1920px] mx-auto bg-[#0f172a] border-y border-white/10 animate-fade-in-up animate-delay-2" id="project-slider">
-            
-            <div *ngFor="let project of projects; let i = index" 
-                 class="project-card group relative overflow-hidden cursor-pointer border-b lg:border-b-0 lg:border-r border-white/10 animate-fade-in-up"
-                 [class.flex-grow-[3]]="selectedIndex === i"
-                 [class.flex-grow-[1]]="selectedIndex !== i"
-                 [ngClass]="'animate-delay-' + (i % 4)"
-                 (click)="setActive(i)">
-                 
-                <div class="absolute inset-0">
-                    <div class="absolute inset-0 bg-gradient-to-br transition-transform duration-700"
-                         [ngClass]="project.surface"
-                         [class.opacity-100]="selectedIndex === i"
-                         [class.opacity-80]="selectedIndex !== i"
-                         [class.group-hover:scale-105]="selectedIndex === i">
+        <div class="project-showcase-grid animate-fade-in-up animate-delay-2">
+            <article
+                *ngFor="let project of projects; let i = index"
+                class="project-showcase-card"
+                [ngClass]="[project.themeClass, i === 0 ? 'project-showcase-card--featured' : '']"
+            >
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="project-showcase-card__top">
+                        <span class="project-showcase-card__index">0{{ i + 1 }}</span>
+                        <span class="project-showcase-card__category">{{ project.category }}</span>
                     </div>
-                    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0%,transparent_40%,transparent_100%)]"></div>
-                    <div class="absolute inset-0 opacity-70" [ngClass]="'bg-gradient-to-br ' + project.accent"></div>
-                    <div class="absolute top-10 right-8 w-40 h-40 rounded-full blur-3xl opacity-40"
-                         [ngClass]="'bg-gradient-to-br ' + project.accent"></div>
-                    <div class="absolute inset-x-8 bottom-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-end justify-end p-6 md:p-10 pointer-events-none">
-                        <span class="text-[clamp(3rem,8vw,7rem)] font-black tracking-tight text-white/[0.06] uppercase">
-                            {{ project.collapsedTitle }}
-                        </span>
+
+                    <div class="project-showcase-card__body">
+                        <h3 class="project-showcase-card__title">
+                            <span class="project-showcase-card__name">{{ project.name }}</span>
+                            <span class="project-showcase-card__subtitle">{{ project.subtitle }}</span>
+                        </h3>
+                        <p class="project-showcase-card__description">{{ project.description }}</p>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent"></div>
-                </div>
-                
-                <!-- Expanded Content -->
-                <div class="content-expanded absolute inset-0 p-8 md:p-16 flex flex-col justify-center max-w-2xl z-20 transition-opacity duration-500 delay-300"
-                     [class.opacity-100]="selectedIndex === i"
-                     [class.opacity-0]="selectedIndex !== i"
-                     [class.pointer-events-none]="selectedIndex !== i">
-                    <span class="font-medium mb-3 w-max px-3 py-1 rounded-full border text-sm" [ngClass]="project.badge">{{ project.category }}</span>
-                    <h3 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">{{ project.title }}</h3>
-                    <p class="text-gray-300 mb-8 leading-relaxed">{{ project.description }}</p>
-                    <p class="text-xs md:text-sm uppercase tracking-[0.25em] text-gray-400 mb-6">{{ project.stack }}</p>
-                    <a [href]="project.link"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       (click)="$event.stopPropagation()"
-                       class="px-8 py-3 bg-white text-black font-bold text-sm rounded hover:bg-gray-200 transition-colors w-max button-glow inline-flex items-center">
-                        VOIR LE PROJET
-                    </a>
-                </div>
 
-                <!-- Collapsed Content (Hidden when expanded) -->
-                <div class="content-collapsed absolute inset-0 flex items-center justify-center bg-slate-950/70 transition-opacity duration-300 z-30"
-                     [class.opacity-0]="selectedIndex === i"
-                     [class.pointer-events-none]="selectedIndex === i"
-                     [class.opacity-100]="selectedIndex !== i">
-                    <h3 class="text-4xl font-bold text-gray-500 vertical-text tracking-widest uppercase opacity-50 group-hover:opacity-100 transition-opacity">{{ project.collapsedTitle }}</h3>
-                </div>
-            </div>
+                    <div class="project-showcase-card__footer">
+                        <p class="project-showcase-card__stack">{{ project.stack }}</p>
 
+                        <a
+                            [href]="project.link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-showcase-card__link"
+                        >
+                            Voir le projet
+                        </a>
+                    </div>
+                </div>
+            </article>
         </div>
-    </section>
+    </div>
+</section>
