@@ -20,6 +20,15 @@ interface Project {
 export class ProjectsComponent {
     projects: Project[] = [
         {
+            category: 'ERP Artisans',
+            name: 'Boorise',
+            subtitle: 'Gestion clients, matériaux et devis sans friction.',
+            description: 'Application SaaS pensée pour les artisans, avec CRM simple, chiffrage chantier, factures et suivi des documents de vente dans une interface claire.',
+            stack: 'SaaS, CRM, Devis, Facturation',
+            link: 'https://www.boorise.fr/',
+            themeClass: 'project-showcase-card--pink',
+        },
+        {
             category: 'Framework',
             name: 'ClearBoot',
             subtitle: 'Framework web TypeScript orienté DI.',
@@ -45,15 +54,6 @@ export class ProjectsComponent {
             stack: 'Next.js, FastAPI, NestJS, Kubernetes',
             link: 'https://github.com/Maxenceboo/tp07-microservices-project',
             themeClass: 'project-showcase-card--green',
-        },
-        {
-            category: 'SaaS Product',
-            name: 'Boorise',
-            subtitle: 'ERP SaaS modulaire pour PME et TPE.',
-            description: 'Projet produit autour d’un ERP pensé pour la facturation, le CRM et la gestion des stocks.',
-            stack: 'Angular, API, PostgreSQL, SaaS',
-            link: 'https://github.com/Maxenceboo/Boorise',
-            themeClass: 'project-showcase-card--pink',
         },
         {
             category: 'Portfolio',
